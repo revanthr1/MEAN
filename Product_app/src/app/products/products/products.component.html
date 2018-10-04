@@ -1,0 +1,30 @@
+
+
+<div class="panel panel-primary">
+  <div class="panel_heading">
+    {{pageTitle}}
+  </div>
+  <div class="panel_body">
+    <table class = "table table-bordered" *ngIf="products && products.length">
+      <tr>
+        <th>
+          <button class"btn btn-primary"(click)="toggleimage()">{{showHideImage ? 'Hide Image' : 'Show Image'}}</button>
+        </th>
+        <th>Product name</th>
+        <th>product code</th>
+        <th>price</th>
+        <th>rating</th>
+      </tr>
+      <tr *ngFor="let product of products">
+        <td>
+          <img *ngIf = "showHideImage" [src]="product.imageUrl" style = "width: 50px;" />
+        </td>
+            <td>{{product.productname}}</td>
+            <td>{{product.productcode}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.starRating}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
